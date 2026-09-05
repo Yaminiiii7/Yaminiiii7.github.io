@@ -999,18 +999,21 @@ body.has-photo .hero__inner {
   color: var(--text-mid);
 }
 
+/* Fixed 2 columns rather than auto-fit: with four cards, auto-fit produced
+   three across and one orphan on the second row. 2×2 is balanced and gives
+   each card room for a long email address. */
 .contact__links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-  gap: .85rem;
-  max-width: 760px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 840px;
   margin-inline: auto;
   text-align: left;
 }
 
 .contactcard {
-  display: flex; align-items: center; gap: .9rem;
-  padding: 1.05rem 1.2rem;
+  display: flex; align-items: center; gap: 1.1rem;
+  padding: 1.45rem 1.55rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
@@ -1025,20 +1028,23 @@ body.has-photo .hero__inner {
 .contactcard__ico {
   display: grid; place-items: center;
   flex: 0 0 auto;
-  width: 38px; height: 38px;
-  border-radius: 10px;
+  width: 46px; height: 46px;
+  border-radius: 12px;
   background: var(--accent-glow);
   color: var(--accent);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
 }
+/* Both are <p>, so cancel the global paragraph bottom margin. */
 .contactcard__label {
+  margin: 0;
   color: var(--text-dim);
-  font-size: .72rem;
+  font-size: .74rem;
   text-transform: uppercase;
   letter-spacing: .09em;
 }
 .contactcard__value {
-  font-size: .9rem; font-weight: 600;
+  margin: .12rem 0 0;
+  font-size: .97rem; font-weight: 600;
   letter-spacing: -.012em;
   overflow-wrap: anywhere;
 }
