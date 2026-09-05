@@ -1,0 +1,18 @@
+# Working source documents — the site content lives in assets/js/data.js,
+# so these don't need to be published.
+Projects.docx
+Yamini_Resume_portfolio.docx
+*.docx
+~$*
+
+# Local tooling
+.claude/
+
+# OS / editor cruft
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Yamini Mandadi — Cloud Platform &amp; Security Engineer</title>
+  <meta name="description" content="Azure-focused cloud engineer specializing in secure infrastructure automation, Terraform, DevSecOps CI/CD, and Zero Trust identity. AZ-104 and AZ-500 certified." />
+  <meta name="author" content="Yamini Mandadi" />
+
+  <!-- Social share preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Yamini Mandadi — Cloud Platform &amp; Security Engineer" />
+  <meta property="og:description" content="Azure-focused cloud engineer. Terraform, DevSecOps CI/CD, Zero Trust, and cloud security assessment." />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230B1120'/><text y='.9em' x='50%25' text-anchor='middle' font-size='58' font-family='system-ui' font-weight='700' fill='%2338BDF8'>Y</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ===================================================== NAV ========== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand">
+        <span class="nav__mark">YM</span>
+        <span class="nav__brandtext" data-bind="nav-name"></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#recognition">Recognition</a>
+        <a href="#skills">Skills</a>
+        <a href="#credentials">Certifications</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button id="themeToggle" class="iconbtn" type="button" aria-label="Switch color theme" title="Switch theme">
+          <svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+          <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        </button>
+        <button id="menuToggle" class="iconbtn iconbtn--menu" type="button" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="nav__progress" id="navProgress"></div>
+  </header>
+
+  <main id="main">
+    <!-- ================================================== HERO ========== -->
+    <section class="hero" id="top">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+
+      <div class="wrap hero__inner">
+        <div class="hero__text">
+          <p class="hero__eyebrow">
+            <span class="dot"></span>
+            <span data-bind="hero-location"></span>
+            <span class="hero__eyebrow-sep">·</span>
+            <span>Open to opportunities</span>
+          </p>
+
+          <h1 class="hero__name" data-bind="hero-name"></h1>
+          <p class="hero__title" data-bind="hero-title"></p>
+          <p class="hero__summary" data-bind="hero-summary"></p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projects">
+              View projects
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#contact">Get in touch</a>
+            <a class="btn btn--ghost" id="resumeBtn" href="#" target="_blank" rel="noopener" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11M7.5 10 12 14.5 16.5 10M4.5 19.5h15"/></svg>
+              Resume
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero__photo" id="heroPhoto" hidden>
+          <img id="heroPhotoImg" src="" alt="" width="768" height="1024" fetchpriority="high" />
+        </figure>
+
+        <dl class="stats" data-bind="hero-stats"></dl>
+      </div>
+    </section>
+
+    <!-- ================================================= ABOUT ========== -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <p class="section__kicker">About</p>
+        <h2 class="section__title">What I actually do</h2>
+
+        <div class="about">
+          <div class="about__body">
+            <p>
+              I work at the layer where cloud infrastructure meets security. Most of my
+              time is spent turning manual, click-through cloud operations into code —
+              Terraform modules, ARM templates, Packer images — and then putting that code
+              behind a pipeline that validates and security-scans it before anything
+              reaches production.
+            </p>
+            <p>
+              The security half isn't theoretical. I've built hub-and-spoke network
+              architectures with Azure Firewall and Private Endpoints, enforced
+              least-privilege access through Entra ID, Conditional Access, and PIM, and
+              managed the certificate and secret lifecycle in Key Vault. On the other side
+              of the fence, I run assessments with Nmap, Nessus, and Metasploit and write
+              them up with CVSS-scored, remediation-first reporting.
+            </p>
+            <p>
+              I also care about the numbers. On one engagement I brought Azure spend down
+              by roughly 50–66% through rightsizing, App Service Plan optimization, and a
+              validated migration to Consumption Plan hosting.
+            </p>
+          </div>
+
+          <aside class="about__side">
+            <h3 class="about__sidetitle">Education</h3>
+            <ul class="edu" data-bind="education"></ul>
+
+            <h3 class="about__sidetitle">Focus areas</h3>
+            <ul class="focus">
+              <li>Infrastructure as Code &amp; DevSecOps pipelines</li>
+              <li>Cloud network architecture &amp; segmentation</li>
+              <li>Zero Trust identity &amp; access governance</li>
+              <li>Observability, alerting &amp; incident automation</li>
+              <li>Vulnerability assessment &amp; penetration testing</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ EXPERIENCE ========== -->
+    <section class="section section--alt" id="experience">
+      <div class="wrap">
+        <p class="section__kicker">Experience</p>
+        <h2 class="section__title">Where I've built things</h2>
+        <div class="timeline" data-bind="experience"></div>
+      </div>
+    </section>
+
+    <!-- ============================================== PROJECTS ========== -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <p class="section__kicker">Projects</p>
+        <h2 class="section__title">Selected work</h2>
+        <p class="section__lede">
+          Nine projects spanning cloud automation, offensive security, applied ML, and
+          backend engineering. Every one links to its source.
+        </p>
+
+        <div class="filters" id="filters" role="group" aria-label="Filter projects by category"></div>
+        <div class="projects" data-bind="projects"></div>
+        <p class="projects__empty" id="projectsEmpty" hidden>No projects in this category.</p>
+      </div>
+    </section>
+
+    <!-- ========================================== RECOGNITION ========== -->
+    <section class="section section--alt" id="recognition">
+      <div class="wrap">
+        <p class="section__kicker">Recognition</p>
+        <h2 class="section__title">What colleagues say</h2>
+        <p class="section__lede">
+          Feedback and awards from the teams I've worked alongside.
+        </p>
+        <div class="quotes" data-bind="testimonials"></div>
+      </div>
+    </section>
+
+    <!-- ================================================ SKILLS ========== -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <p class="section__kicker">Skills</p>
+        <h2 class="section__title">Tools I work in</h2>
+        <div class="skills" data-bind="skills"></div>
+      </div>
+    </section>
+
+    <!-- =========================================== CREDENTIALS ========== -->
+    <section class="section section--alt" id="credentials">
+      <div class="wrap">
+        <p class="section__kicker">Credentials</p>
+        <h2 class="section__title">Certifications &amp; achievements</h2>
+        <div class="creds" data-bind="credentials"></div>
+      </div>
+    </section>
+
+    <!-- ========================================== PUBLICATIONS ========== -->
+    <section class="section" id="publications">
+      <div class="wrap">
+        <p class="section__kicker">Publications</p>
+        <h2 class="section__title">Research</h2>
+        <div class="pubs" data-bind="publications"></div>
+      </div>
+    </section>
+
+    <!-- =============================================== CONTACT ========== -->
+    <section class="section section--contact" id="contact">
+      <div class="wrap contact">
+        <p class="section__kicker">Contact</p>
+        <h2 class="section__title">Let's talk</h2>
+        <p class="contact__lede">
+          I'm open to cloud platform, cloud security, and DevOps roles — and always happy
+          to talk infrastructure automation. The fastest way to reach me is email.
+        </p>
+
+        <div class="contact__links" data-bind="contact"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p data-bind="footer-name"></p>
+      <p class="footer__built">Built from scratch — HTML, CSS, and vanilla JS.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
