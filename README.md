@@ -78,29 +78,34 @@ and the `[data-theme="light"]` block. Current values are `#3FA9F5` and `#0C6DD1`
 
 ---
 
-## Deploy free on GitHub Pages
+## Live site
+
+**https://yaminiiii7.github.io** — hosted free on GitHub Pages from
+`github.com/Yaminiiii7/Yaminiiii7.github.io`.
+
+The repo is already initialised, committed, and pointed at that remote.
+
+### First push (one time)
 
 ```bash
-cd portfolio
-git init
-git add .
-git commit -m "Portfolio site"
-git branch -M main
-git remote add origin https://github.com/Yaminiiii7/Yaminiiii7.github.io.git
-git push -u origin main
+gh auth login          # pick GitHub.com → HTTPS → browser, sign in as Yaminiiii7
+gh repo create Yaminiiii7.github.io --public --source=. --remote=origin --push
 ```
 
-Naming the repo **`Yaminiiii7.github.io`** gets you the clean URL
-`https://yaminiiii7.github.io`. Then on GitHub: **Settings → Pages → Source: Deploy from
-a branch → Branch: `main` / `(root)` → Save.** Live in about a minute.
+Then on GitHub: **Settings → Pages → Source: "Deploy from a branch" →
+Branch: `main` / `(root)` → Save.** Live in about a minute.
 
-Any future update is just:
+> The repo must be **public** — GitHub Pages on the free plan won't serve a private one.
+
+### Every update after that
 
 ```bash
 git add .
 git commit -m "Add new project"
 git push
 ```
+
+The site rebuilds automatically within a minute or so.
 
 ### Alternatives (also free)
 
