@@ -1005,15 +1005,16 @@ body.has-photo .hero__inner {
 .contact__links {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  max-width: 840px;
+  gap: 1.1rem;
+  max-width: 960px;
   margin-inline: auto;
   text-align: left;
 }
 
 .contactcard {
-  display: flex; align-items: center; gap: 1.1rem;
-  padding: 1.45rem 1.55rem;
+  display: flex; align-items: center; gap: 1.2rem;
+  padding: 1.6rem 1.75rem;
+  min-height: 96px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
@@ -1044,9 +1045,11 @@ body.has-photo .hero__inner {
 }
 .contactcard__value {
   margin: .12rem 0 0;
-  font-size: .97rem; font-weight: 600;
+  font-size: 1rem; font-weight: 600;
   letter-spacing: -.012em;
-  overflow-wrap: anywhere;
+  /* `anywhere` was chopping the email mid-word ("...78 / 9281@gmail.co / m").
+     `break-word` only breaks when a line genuinely cannot fit. */
+  overflow-wrap: break-word;
 }
 
 /* ---------------------------------------------------------------- FOOTER -- */
