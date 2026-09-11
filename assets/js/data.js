@@ -232,6 +232,22 @@ const DATA = {
       stack: ["Node.js", "Express", "MongoDB", "Mongoose", "JavaScript", "REST API"],
       repo: "https://github.com/Yaminiiii7/Backend-REST-API-with-MongoDB-and-Mongoose",
     },
+    {
+      title: "Data Analytics: Customer Purchasing Patterns",
+      tag: "Data Analytics",
+      blurb: `An end-to-end retail analytics project that analyzed 264K+ transactions
+        across 272 stores to identify customer purchasing patterns, demographic segments,
+        and product affinity trends. The work turned transaction data into clear,
+        action-oriented recommendations for customer targeting, product placement, and
+        promotional strategy.`,
+      highlights: [
+        "Processed and analyzed 264K+ retail transactions with Python using Pandas, NumPy, Matplotlib, and Seaborn",
+        "Segmented customer behavior by demographics and uncovered higher-value spending patterns in families and older customers",
+        "Delivered data-backed recommendations for product placement and promotion strategy based on observed purchase trends",
+      ],
+      stack: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Data Analysis", "Retail Analytics"],
+      repo: "https://github.com/Yaminiiii7/DataAnalytics-customerPurchasingPatterns",
+    }
   ],
 
   /* ----------------------------------------------------------------- SKILLS */
