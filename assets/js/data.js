@@ -247,7 +247,7 @@ const DATA = {
       ],
       stack: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Data Analysis", "Retail Analytics"],
       repo: "https://github.com/Yaminiiii7/DataAnalytics-customerPurchasingPatterns",
-    }
+    },
   ],
 
   /* ----------------------------------------------------------------- SKILLS */
