@@ -35,7 +35,7 @@ values — the trailing comma after `}` matters:
 ```js
 {
   title: "My New Project",
-  tag: "Cloud & DevOps",          // must be one of the four tags below
+  tag: "Cloud & DevOps",          // must be one of the tags listed below
   featured: true,                 // optional — pins it to the top
   blurb: `Two or three sentences on what it does and why it exists.`,
   highlights: [
@@ -48,7 +48,7 @@ values — the trailing comma after `}` matters:
 ```
 
 Valid `tag` values (these generate the filter buttons automatically):
-`"Cloud & DevOps"`, `"Security"`, `"AI/ML"`, `"Full-Stack"`
+`"Cloud & DevOps"`, `"Security"`, `"AI/ML"`, `"Full-Stack"`, `"Data Analytics"`
 
 Using a brand-new tag string is fine too — a filter button appears for it on its own.
 
@@ -57,18 +57,20 @@ Using a brand-new tag string is fine too — a filter button appears for it on i
 | To change | Edit this in `data.js` |
 |---|---|
 | Job title / summary paragraph | `profile.title`, `profile.summary` |
-| The four hero numbers | `profile.stats` |
+| The hero numbers (2–4 tiles) | `profile.stats` |
 | Add a job or bullet point | `experience` (newest first) |
 | Add a certification | `credentials` — `type: "cert"` or `"award"` |
 | Add a skill | `skills` → the relevant `group` |
-| The three "What I actually do" paragraphs | these are in `index.html`, `#about` section |
+| The "What I actually do" paragraphs and Focus areas | these are in `index.html`, `#about` section |
 
 ### Two things still to fill in
 
 1. **LinkedIn URL** — `data.js` line ~30 has a placeholder. Replace it with your real
    profile URL.
-2. **Resume PDF** — export your resume as PDF, save it to `assets/` as
+2. **Resume PDF** — export your resume as PDF, save it to `assets/docs/` as
    `Yamini_Mandadi_Resume.pdf`, and the Resume button appears automatically.
+   The path must match `profile.resume` in `data.js`, and the file must be
+   committed to git or it won't deploy to GitHub Pages.
    Don't want the button? Set `resume: null` in `data.js`.
 
 ### Change the accent color

@@ -30,7 +30,7 @@ const DATA = {
 
     // Put your PDF in the assets/ folder and name it to match.
     // Set to null if you don't want a resume button.
-    resume: "assets/Yamini_Mandadi_Resume.pdf",
+    resume: "assets/docs/Yamini_Mandadi_Resume.pdf",
 
   
     // Plain text only — markdown like **bold** or # headings is NOT parsed and
@@ -42,6 +42,7 @@ const DATA = {
     // Delete the whole array (stats: [],) to hide the strip entirely.
     stats: [
       { value: "4", label: "Years in cloud" },
+      { value: "50–66%", label: "Azure spend reduced" },
       { value: "3", label: "Azure certifications" },
     ],
   },
@@ -52,7 +53,7 @@ const DATA = {
       role: "Cloud Platform Engineer",
       company: "Community Dreams Foundation",
       period: "Aug 2026 — Present",
-      //current: true,
+      current: true,
       stack: ["Azure Data Factory", "Logic Apps", "Event Hubs", "SHIR"],
       points: [
         "Configured and supported Self-hosted Integration Runtime (SHIR) to securely connect Azure Data Factory with on-premises and private-network data sources, troubleshooting connectivity, authentication, and pipeline execution issues.",
@@ -110,11 +111,12 @@ const DATA = {
       tag: "Cloud & DevOps",
       featured: true,
       blurb: `An automated incident-response pipeline that detects performance degradation
-        in web applications, remediates it, and notifies stakeholders. Sumo Logic watches
-        the logs, an AWS Lambda recovers the failing EC2 instance, and SNS closes the loop —
-        removing manual intervention on slow API endpoints entirely.`,
+        in web applications, executes the remediation runbook, and notifies stakeholders.
+        Sumo Logic watches the logs, an AWS Lambda recovers the failing EC2 instance, and
+        SNS closes the loop — removing manual intervention on slow API endpoints entirely.`,
       highlights: [
         "Log monitor → alert → Lambda → EC2 recovery → SNS notification, fully automated",
+        "Codified runbook response — detection through remediation to stakeholder notification with no manual step",
         "Entire stack defined in Terraform: VPC, EC2, IAM roles, Lambda, and SNS topics",
       ],
       stack: ["Terraform", "AWS", "Lambda", "EC2", "SNS", "IAM", "Python", "Boto3", "Sumo Logic"],
@@ -124,15 +126,18 @@ const DATA = {
       title: "Network Scanning & Exploitation Assessment",
       tag: "Security",
       featured: true,
-      blurb: `A full manual and automated network security assessment — discovery,
-        enumeration, vulnerability validation, and controlled exploitation across a lab
-        environment — documented as a structured report a client could act on directly.`,
+      blurb: `A full manual and automated network security assessment run against a
+        virtualized lab I built myself — discovery, enumeration, vulnerability validation,
+        and controlled exploitation — documented as a structured report a client could act
+        on directly. Building the target environment first meant I knew exactly what was
+        exposed and could verify every finding against ground truth.`,
       highlights: [
+        "Built the target environment on VMware — virtual machines, segmented virtual networking, and snapshots to reset between test runs",
         "TCP/UDP port scanning, service enumeration, and OS fingerprinting across test subnets",
         "CVSS-based risk categorization with documented impact, evidence, and remediation guidance",
         "Controlled penetration testing to validate findings rather than forward raw scanner output",
       ],
-      stack: ["Nmap", "Zenmap", "Wireshark", "Metasploit", "Nessus", "Snort", "CVSS"],
+      stack: ["VMware", "Nmap", "Zenmap", "Wireshark", "Metasploit", "Nessus", "Snort", "CVSS"],
       repo: "https://github.com/Yaminiiii7/NetworkScanning_Exploitation",
     },
     {
@@ -254,15 +259,23 @@ const DATA = {
   skills: [
     {
       group: "Cloud Platforms",
-      items: ["Azure", "AWS", "Azure Management Groups", "Azure Policy", "Azure Site Recovery",
+      items: ["Azure", "AWS", "Azure Management Groups", "Azure Site Recovery",
               "VNets", "Hub-and-Spoke", "Private Endpoints", "Private DNS",
-              "Azure Data Factory", "Logic Apps", "Event Hubs"],
+              "Azure Data Factory", "Logic Apps", "Event Hubs",
+              "VMware", "Virtual Machine Lifecycle"],
     },
     {
       group: "Security & Identity",
-      items: ["Azure Firewall", "NSGs", "Microsoft Defender for Cloud", "Key Vault",
+      items: ["Azure Firewall", "NSGs", "Key Vault",
               "Microsoft Entra ID", "RBAC", "Managed Identities", "Service Principals",
               "Conditional Access", "MFA", "PIM", "Zero Trust", "SSL/TLS"],
+    },
+    {
+      group: "Governance, Risk & Compliance",
+      items: ["Azure Policy", "Microsoft Defender for Cloud", "Security Baselines",
+              "CVSS Risk Scoring", "Vulnerability Assessment & Remediation Reporting",
+              "IAM Governance & Least Privilege", "ITIL Incident & Change Management",
+              "Disaster Recovery Planning (RPO/RTO)", "Azure Cost Governance"],
     },
     {
       group: "Infrastructure as Code & DevOps",
@@ -271,8 +284,8 @@ const DATA = {
     },
     {
       group: "Security Assessment",
-      items: ["Nmap", "Nessus", "Metasploit", "Wireshark", "Snort", "Vulnerability Assessment",
-              "Network Security Testing", "Threat Analysis", "CVSS Risk Scoring"],
+      items: ["Nmap", "Zenmap", "Nessus", "Metasploit", "Wireshark", "Snort",
+              "Penetration Testing", "Network Security Testing", "Threat Analysis"],
     },
     {
       group: "Monitoring & Observability",
@@ -321,8 +334,9 @@ const DATA = {
     },
     {
       name: "Azure Fundamentals", sub: "AZ-900 · Microsoft Certified", type: "cert",
-      // TODO: same as AZ-104 above — paste your Microsoft Learn share link here.
-      url: "",
+      // Optional: paste your Microsoft Learn share link here to make this card
+      // clickable, or add `image:` like the AZ-104 entry above. Until then it
+      // renders as a plain (non-clickable) card, which is fine.
     },
     {
       name: "The Security Hackathon 2022 — 1st Place", sub: "CloudThat × Microsoft Azure · Jan 2023", type: "award",
