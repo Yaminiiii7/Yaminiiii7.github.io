@@ -313,7 +313,10 @@ const DATA = {
     },
   ],
 
-  /* --------------------------------------------- CERTS & ACHIEVEMENTS ----- */
+  /* ------------------------------------------------------- CERTIFICATIONS -- */
+  // Formal certifications only. Awards and competition results live in the
+  // `awards` array below; colleague feedback lives in `testimonials`.
+  //
   // type: "cert" gets the shield icon, "award" gets the trophy icon.
   //
   // Two optional ways to make a card open something on click:
@@ -338,22 +341,72 @@ const DATA = {
       // clickable, or add `image:` like the AZ-104 entry above. Until then it
       // renders as a plain (non-clickable) card, which is fine.
     },
+  ],
+
+  /* --------------------------------------------------------------- AWARDS -- */
+  // Awards, competition results, and citations. These use the same card shape
+  // as `testimonials` below, so each one can carry the citation text, a
+  // certificate scan, and optional report links.
+  //
+  //   quote   the citation text. Omit it for an award with no wording —
+  //           the card then shows just the trophy, name, and details.
+  //   image   certificate scan; click opens it in the lightbox.
+  //   links   optional [{label, url}] row, e.g. a scouting report PDF.
+  awards: [
     {
-      name: "The Security Hackathon 2022 — 1st Place", sub: "CloudThat × Microsoft Azure · Jan 2023", type: "award",
+      quote: `In appreciation of your outstanding contribution to the organisation, you
+        are awarded the On the Spot (Team) Award. You are an inspiring role model to your
+        colleagues. Thank you for your dedication and commitment.`,
+      author: "On the Spot (Team) Award",
+      role: "TCS Gems · Aug 2024",
+      company: "Signed by Milind Lakkad, EVP & Global Head, HR",
+      image: "assets/img/on-the-spot-award.png",
+      alt: "TCS Gems certificate awarding M Yamini the On the Spot (Team) Award, dated 19 August 2024.",
+    },
+    {
+      quote: `Awarded for securing 1st place in The Security Hackathon 2022, conducted by
+        CloudThat in partnership with Microsoft Azure.`,
+      author: "The Security Hackathon 2022 — 1st Place",
+      role: "Jan 2023",
+      company: "CloudThat × Microsoft Azure",
       image: "assets/img/security-hackathon.png",
       alt: "CloudThat and Microsoft Azure certificate awarding M Yamini first place in The Security Hackathon 2022, dated 13 January 2023.",
     },
     {
-      name: "National Cyber League — Fall 2024",    sub: "84th & 89th percentile · Individual & Team", type: "award",
+      quote: `Ranked 1,392nd out of 8,484 competitors nationally — the 84th percentile —
+        scoring 1,360 of 3,000 points. Strongest categories were Network Traffic Analysis
+        (94th percentile), Log Analysis (88th), and Enumeration & Exploitation (85th).`,
+      author: "NCL Fall 2024 — Individual Game",
+      role: "84th percentile · 1,392 of 8,484",
+      company: "National Cyber League · Cyber Skyline",
       image: "assets/img/ncl-individual-certificate.png",
-      alt: "National Cyber League certificate of participation for Yamini Mandadi, NCL Fall 2024 Individual Game.",
+      alt: "National Cyber League certificate of participation for Yamini Mandadi, NCL Fall 2024 Individual Game, signed by NCL Commissioner Dr. David Zeichick.",
+      links: [
+        { label: "Open scouting report", url: "assets/docs/ncl-fall-2024-individual-scouting-report.pdf" },
+      ],
     },
-    { name: "Zolve Global Scholarship",             sub: "2024",                         type: "award" },
-    { name: "Special Recognition, Graduate Studies", sub: "2026",                        type: "award" },
     {
-      name: "On the Spot (Team) Award",             sub: "TCS Gems · Aug 2024",          type: "award",
-      image: "assets/img/on-the-spot-award.png",
-      alt: "TCS Gems certificate awarding M Yamini the On the Spot (Team) Award, dated 19 August 2024.",
+      quote: `Ranked 574th out of 4,893 nationally — the 89th percentile — scoring 1,065
+        of 3,100 points. Strongest categories were Log Analysis (93rd percentile),
+        Scanning & Reconnaissance (91st), and Open Source Intelligence (90th).`,
+      author: "NCL Fall 2024 — Team Game",
+      role: "89th percentile · 574 of 4,893",
+      company: "National Cyber League · Cyber Skyline",
+      image: "assets/img/ncl-team-certificate.png",
+      alt: "National Cyber League certificate of participation for Yamini Mandadi, NCL Fall 2024 Team Game, signed by NCL Commissioner Dr. David Zeichick.",
+      links: [
+        { label: "Open scouting report", url: "assets/docs/ncl-fall-2024-team-scouting-report.pdf" },
+      ],
+    },
+    {
+      author: "Zolve Global Scholarship",
+      role: "2024",
+      company: "Zolve",
+    },
+    {
+      author: "Special Recognition, Graduate Studies",
+      role: "2026",
+      company: "California State University, Los Angeles",
     },
   ],
 
@@ -388,8 +441,10 @@ const DATA = {
   ],
 
   /* ----------------------------------------------------------- TESTIMONIALS */
+  // Feedback from people you've worked with — this section is only for things
+  // a colleague actually said. Awards and competition results go in `awards`.
+  //
   // `featured: true` makes the card span the full row with larger type.
-  // `award: true` styles it as a citation (trophy icon).
   // `note: true`  styles it as an appreciation note (message icon).
   // `image`       path to a certificate scan — shows as a thumbnail you can
   //               click to enlarge. Always write an `alt` describing it.
@@ -411,55 +466,6 @@ const DATA = {
       author: "Deepika Nehra",
       role: "Cloud Architect",
       company: "Tata Consultancy Services",
-    },
-    {
-      award: true,
-      quote: `In appreciation of your outstanding contribution to the organisation, you
-        are awarded the On the Spot (Team) Award. You are an inspiring role model to your
-        colleagues. Thank you for your dedication and commitment.`,
-      author: "On the Spot (Team) Award",
-      role: "TCS Gems · Aug 2024",
-      company: "Signed by Milind Lakkad, EVP & Global Head, HR",
-      image: "assets/img/on-the-spot-award.png",
-      alt: "TCS Gems certificate awarding M Yamini the On the Spot (Team) Award, dated 19 August 2024.",
-    },
-    {
-      award: true,
-      quote: `Awarded for securing 1st place in The Security Hackathon 2022, conducted by
-        CloudThat in partnership with Microsoft Azure.`,
-      author: "The Security Hackathon 2022 — 1st Place",
-      role: "Jan 2023",
-      company: "CloudThat × Microsoft Azure",
-      image: "assets/img/security-hackathon.png",
-      alt: "CloudThat and Microsoft Azure certificate awarding M Yamini first place in The Security Hackathon 2022, dated 13 January 2023.",
-    },
-    {
-      award: true,
-      quote: `Ranked 1,392nd out of 8,484 competitors nationally — the 84th percentile —
-        scoring 1,360 of 3,000 points. Strongest categories were Network Traffic Analysis
-        (94th percentile), Log Analysis (88th), and Enumeration & Exploitation (85th).`,
-      author: "NCL Fall 2024 — Individual Game",
-      role: "84th percentile · 1,392 of 8,484",
-      company: "National Cyber League · Cyber Skyline",
-      image: "assets/img/ncl-individual-certificate.png",
-      alt: "National Cyber League certificate of participation for Yamini Mandadi, NCL Fall 2024 Individual Game, signed by NCL Commissioner Dr. David Zeichick.",
-      links: [
-        { label: "Open scouting report", url: "assets/docs/ncl-fall-2024-individual-scouting-report.pdf" },
-      ],
-    },
-    {
-      award: true,
-      quote: `Ranked 574th out of 4,893 nationally — the 89th percentile — scoring 1,065
-        of 3,100 points. Strongest categories were Log Analysis (93rd percentile),
-        Scanning & Reconnaissance (91st), and Open Source Intelligence (90th).`,
-      author: "NCL Fall 2024 — Team Game",
-      role: "89th percentile · 574 of 4,893",
-      company: "National Cyber League · Cyber Skyline",
-      image: "assets/img/ncl-team-certificate.png",
-      alt: "National Cyber League certificate of participation for Yamini Mandadi, NCL Fall 2024 Team Game, signed by NCL Commissioner Dr. David Zeichick.",
-      links: [
-        { label: "Open scouting report", url: "assets/docs/ncl-fall-2024-team-scouting-report.pdf" },
-      ],
     },
     {
       note: true,

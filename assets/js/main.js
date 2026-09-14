@@ -197,13 +197,19 @@
 
   /* ---------------------------------------------------------- testimonials -- */
 
-  function renderTestimonials() {
-    const host = slot('testimonials');
-    const list = DATA.testimonials || [];
+  // Recognition (what colleagues said) and Awards (citations and competition
+  // results) render the same card from two different arrays, so both go
+  // through here. `isAward` switches the badge to a trophy and lets an entry
+  // omit its quote — an award with no citation wording still gets a card.
+  function renderQuoteCards(key, sectionId, isAward) {
+    const host = slot(key);
+    if (!host) return;
 
-    // No testimonials? Hide the whole section rather than leave an empty gap.
+    const list = DATA[key] || [];
+
+    // Nothing to show? Hide the whole section rather than leave an empty gap.
     if (!list.length) {
-      const section = document.getElementById('recognition');
+      const section = document.getElementById(sectionId);
       if (section) section.hidden = true;
       return;
     }
@@ -211,12 +217,13 @@
     host.innerHTML = list.map((t) => {
       const cls = ['quote', 'reveal'];
       if (t.featured) cls.push('quote--featured');
-      if (t.award)    cls.push('quote--award');
+      if (isAward)    cls.push('quote--award');
+      if (!t.quote)   cls.push('quote--bare');
 
       // Initials only make sense for a real person. Awards get a trophy,
       // unattributed notes get a message icon.
       let badge;
-      if (t.award) {
+      if (isAward) {
         badge = `<span class="quote__avatar quote__avatar--award" aria-hidden="true">${ICONS.award}</span>`;
       } else if (t.note) {
         badge = `<span class="quote__avatar quote__avatar--icon" aria-hidden="true">${ICONS.note}</span>`;
@@ -244,9 +251,9 @@
 
       return `
         <figure class="${cls.join(' ')}">
-          <span class="quote__mark" aria-hidden="true">&ldquo;</span>
+          ${t.quote ? `<span class="quote__mark" aria-hidden="true">&ldquo;</span>` : ''}
           ${shot}
-          <blockquote class="quote__body">${paras(t.quote)}</blockquote>
+          ${t.quote ? `<blockquote class="quote__body">${paras(t.quote)}</blockquote>` : ''}
           ${links}
           <figcaption class="quote__author">
             ${badge}
@@ -258,6 +265,9 @@
         </figure>`;
     }).join('');
   }
+
+  function renderTestimonials() { renderQuoteCards('testimonials', 'recognition', false); }
+  function renderAwards()       { renderQuoteCards('awards',       'awards',      true);  }
 
   /* ---------------------------------------------------------- publications -- */
 
@@ -531,6 +541,7 @@
     renderExperience();
     renderProjects();
     renderTestimonials();
+    renderAwards();
     renderSkills();
     renderCredentials();
     renderPublications();

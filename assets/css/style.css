@@ -745,6 +745,16 @@ body.has-photo .hero__inner {
   border-top: 1px solid var(--border-soft);
 }
 
+/* An award with no citation wording (no quote, no certificate scan): the
+   caption is the entire card, so centre it and drop the divider rule that
+   would otherwise float above it with nothing to divide. */
+.quote--bare { justify-content: center; }
+.quote--bare .quote__author {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
 .quote__avatar {
   display: grid; place-items: center;
   flex: 0 0 auto;
