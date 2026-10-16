@@ -15,7 +15,7 @@ const DATA = {
   /* ---------------------------------------------------------------- PROFILE */
   profile: {
     name: "Yamini Mandadi",
-    title: "Cloud Platform & Security Engineer",
+    title: "Cloud Engineer | Full-Stack Developer | AI/ML",
     location: "Los Angeles, CA",
     email: "yaminiofficial789281@gmail.com",
 
@@ -35,14 +35,13 @@ const DATA = {
   
     // Plain text only — markdown like **bold** or # headings is NOT parsed and
     // will show up as literal characters on the page.
-    summary: `Azure-focused Cloud Engineer with 4 years of experience designing, automating, and securing enterprise cloud infrastructure. Experienced in Azure networking, Terraform, CI/CD, Zero Trust security, identity and access management, private connectivity, cloud governance, monitoring, and disaster recovery. Expanding cloud expertise into modern application development and AI through hands-on experience with React, JavaScript, Node.js, REST APIs, Python, and Retrieval-Augmented Generation (RAG) using Llama 3.2, LangChain, and vector databases. Microsoft-certified in Azure administration and security, combining strong cloud infrastructure expertise with software engineering and emerging AI capabilities.`,
+    summary: `Cloud engineer with 4 years of experience automating and securing Azure infrastructure, including networking, Terraform, CI/CD, identity, governance, and cost optimization. Building on that foundation with hands-on full-stack development using React, Node.js, and REST APIs, plus AI projects in retrieval-augmented generation, vector search, and model evaluation. 3x Microsoft-certified, including Azure administration and security, and seeking cloud engineering, full-stack, or AI/ML opportunities.`,
 
    
     // Tiles size to their content, so any count from 2 to 4 looks right.
     // Delete the whole array (stats: [],) to hide the strip entirely.
     stats: [
       { value: "4", label: "Years in cloud" },
-      { value: "50–66%", label: "Azure spend reduced" },
       { value: "3", label: "Azure certifications" },
     ],
   },
@@ -82,7 +81,7 @@ const DATA = {
       period: "Jul 2022 — Jul 2023",
       stack: ["Microsoft Entra ID", "Zero Trust", "Key Vault", "Cost Management"],
       points: [
-        "Reduced Azure infrastructure costs by approximately 50–66% through Azure Cost Management, resource rightsizing, App Service Plan optimization, and rehosting strategies.",
+        "Optimized Azure infrastructure costs through Azure Cost Management, resource rightsizing, App Service Plan optimization, and rehosting strategies.",
         "Supported migration of application workloads from Azure App Service Plan to the Consumption Plan, performing proof-of-concept testing and validating application compatibility, scalability, networking, security, and deployment requirements.",
         "Supported Azure networking operations across VNets, subnets, NSGs, Azure Firewall, peering, and routing — troubleshooting connectivity and security issues for application workloads.",
         "Implemented Zero Trust security controls using Microsoft Entra ID, Conditional Access, MFA, PIM, RBAC, Managed Identities, and Service Principals to enforce least-privilege access.",
@@ -212,16 +211,18 @@ const DATA = {
       repo: "https://github.com/Yaminiiii7/Log-Analyze-Node-ElasticSearch",
     },
     {
-      title: "Creatorverse",
+      title: "Creatorverse — Content Creator Directory",
       tag: "Full-Stack",
-      blurb: `A full-stack CRUD application for curating a personal directory of favorite
-        content creators across YouTube, Instagram, and X. Users create, browse, update,
-        and delete creator entries backed by a Supabase Postgres database.`,
+      blurb: `A full-stack React app for organizing favorite online creators, from
+        YouTubers and streamers to TikTok and Instagram personalities. Creator profiles
+        are stored in Supabase and managed through dedicated pages for browsing, viewing,
+        adding, editing, and deleting entries.`,
       highlights: [
-        "React + Vite front end with React Router navigation and Tailwind styling",
-        "Supabase / PostgreSQL persistence accessed over REST APIs",
+        "React Router paths for creator listings and individual creator actions",
+        "Supabase JavaScript client connects the app to its PostgreSQL creators table",
+        "Async data loading and CRUD workflows for maintaining the directory",
       ],
-      stack: ["React", "Vite", "JavaScript", "Tailwind CSS", "React Router", "Supabase", "PostgreSQL"],
+      stack: ["React", "Vite", "JavaScript", "React Router", "Supabase", "PostgreSQL", "CSS"],
       repo: "https://github.com/Yaminiiii7/CreatorverseApplication-ReactJS-Supabase",
     },
     {
@@ -252,6 +253,34 @@ const DATA = {
       ],
       stack: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Data Analysis", "Retail Analytics"],
       repo: "https://github.com/Yaminiiii7/DataAnalytics-customerPurchasingPatterns",
+    },
+    {
+      title: "Campus-Life Retrieval-Augmented Generation System",
+      tag: "AI/ML",
+      blurb: `A question-answering system grounded in a curated campus-life corpus
+        covering housing, dining, registration, policies, and student services. It
+        chunks documents, retrieves relevant passages through semantic search, and uses
+        a relevance gate to keep responses focused on supported information.`,
+      highlights: [
+        "Retrieves and cites relevant source passages before generating an answer",
+        "Evaluates retrieval quality and relevance thresholds, including out-of-scope questions",
+      ],
+      stack: ["Python", "RAG", "Embeddings", "Semantic Search", "Vector Database", "Evaluation"],
+      repo: "https://github.com/Yaminiiii7/Building_RAG_System",
+    },
+    {
+      title: "Fine-Tuned Text Classification Model",
+      tag: "AI/ML",
+      blurb: `A text-classification system that learns to sort online community posts
+        into predefined categories based on their content and intent. The project trains
+        and evaluates a model on labeled examples, then compares it with a baseline to
+        measure whether fine-tuning improves classification quality.`,
+      highlights: [
+        "Classifies community posts to help surface relevant content and recurring topics",
+        "Compares a fine-tuned model with a baseline using labeled evaluation data",
+      ],
+      stack: ["Text Classification", "Fine-Tuning", "Labeled Data", "Model Evaluation"],
+      repo: "https://github.com/Yaminiiii7/Finetunethemodel",
     },
   ],
 
@@ -354,6 +383,16 @@ const DATA = {
   //   links   optional [{label, url}] row, e.g. a scouting report PDF.
   awards: [
     {
+      featured: true,
+      quote: `Awarded for securing 1st place in The Security Hackathon 2022, conducted by
+        CloudThat in partnership with Microsoft Azure.`,
+      author: "The Security Hackathon 2022 — 1st Place",
+      role: "Jan 2023",
+      company: "CloudThat × Microsoft Azure",
+      image: "assets/img/security-hackathon.png",
+      alt: "CloudThat and Microsoft Azure certificate awarding M Yamini first place in The Security Hackathon 2022, dated 13 January 2023.",
+    },
+    {
       quote: `In appreciation of your outstanding contribution to the organisation, you
         are awarded the On the Spot (Team) Award. You are an inspiring role model to your
         colleagues. Thank you for your dedication and commitment.`,
@@ -362,15 +401,6 @@ const DATA = {
       company: "Signed by Milind Lakkad, EVP & Global Head, HR",
       image: "assets/img/on-the-spot-award.png",
       alt: "TCS Gems certificate awarding M Yamini the On the Spot (Team) Award, dated 19 August 2024.",
-    },
-    {
-      quote: `Awarded for securing 1st place in The Security Hackathon 2022, conducted by
-        CloudThat in partnership with Microsoft Azure.`,
-      author: "The Security Hackathon 2022 — 1st Place",
-      role: "Jan 2023",
-      company: "CloudThat × Microsoft Azure",
-      image: "assets/img/security-hackathon.png",
-      alt: "CloudThat and Microsoft Azure certificate awarding M Yamini first place in The Security Hackathon 2022, dated 13 January 2023.",
     },
     {
       quote: `Ranked 1,392nd out of 8,484 competitors nationally — the 84th percentile —
