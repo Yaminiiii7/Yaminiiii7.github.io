@@ -15,7 +15,7 @@ const DATA = {
   /* ---------------------------------------------------------------- PROFILE */
   profile: {
     name: "Yamini Mandadi",
-    title: "Software Engineer | Backend & Cloud Infrastructure | AI/ML Integration | Database Automation",
+    title: "Software Engineer | Backend & Cloud Infrastructure | AI/ML Integration",
     location: "Los Angeles, CA",
     email: "yaminiofficial789281@gmail.com",
 
